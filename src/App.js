@@ -4,6 +4,7 @@ import {useState} from "react";
 
 function App() {
    const  [val, setVal] = useState(0);
+   const  [inputVal, setInputVal] = useState("");
     function incremente() {
         setVal(val + 1);
     }
@@ -14,9 +15,11 @@ function App() {
 
     return (
     <div className="App">
+        <br/>
+        <input type="text" value={inputVal} onChange={e => setInputVal(e.target.value)}/>
      <div className="div">
        <br/>
-         {val}
+         {val} <br/> {inputVal}
        <br/>
        <button onClick={incremente}>Incrementer</button>
        <button onClick={decremente}>décrementer</button>
